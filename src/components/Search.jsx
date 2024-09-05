@@ -8,13 +8,16 @@ import Links from "./Links";
 // 300ml second for light
 
 const Search = () => {
+  const [text, setText] = useState('');
   const { setSearchTerm } = useStateContext();
-  const [text, setText] = useState("");
   const [debouncedValue] = useDebounce(text, 300);
 
   useEffect(() => {
-    if (debouncedValue) setSearchTerm(debouncedValue);
-  }, [debouncedValue]);
+    if (debouncedValue) {
+      console.log('Setting search term:', debouncedValue);
+      setSearchTerm(debouncedValue);
+    }
+  }, [debouncedValue, setSearchTerm]);
 
   return (
     <div className="relative sm=ml-48 md:ml-72 sm:-mt-10 mt-3">

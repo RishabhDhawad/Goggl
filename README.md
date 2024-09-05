@@ -1,82 +1,76 @@
-# Goggl - The Most Unique Search Engine in the World
+# Google Search Clone
 
-![Goggl](https://i.ibb.co/yQdYhtq/image.png)
+This project is a Google Search clone built with React, utilizing the Google Search API from RapidAPI.
 
-## Introduction
+## Getting Started
 
-In this project, we have created a Google Clone app. We're going to use React and Goole Search API powered by https://rapidapi.com.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Setup:
-- run ```npm i && npm start``` to start the development server
+### Prerequisites
 
+- Node.js (v14.0.0 or later)
+- npm (v6.0.0 or later)
 
-# Getting Started with Create React App
+### Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/google-search-clone.git
+   cd google-search-clone
+   ```
 
-## Available Scripts
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-In the project directory, you can run:
+3. Create a `.env` file in the root directory and add your RapidAPI key:
+   ```
+   REACT_APP_API_KEY=your_rapidapi_key_here
+   ```
 
-### `npm start`
+   You can obtain a RapidAPI key by signing up at [RapidAPI](https://rapidapi.com/) and subscribing to the [Google Search API](https://rapidapi.com/apigeek/api/google-search3/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Running the Application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To start the development server:
 
-### `npm test`
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application will be available at `http://localhost:3000`.
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `src/components/`: Contains all React components
+- `src/contexts/`: Contains the StateContext for global state management
+- `src/index.js`: Entry point of the application
+- `src/App.js`: Main application component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Web search
+- Image search
+- News search
+- Video search
 
-### `npm run eject`
+## Troubleshooting
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you encounter issues with API rate limiting, try the following:
+- Increase the delay between requests in `src/contexts/StateContextProvider.js`
+- Check your API usage on RapidAPI dashboard
+- Consider upgrading your API plan for higher rate limits
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Google Search API provided by RapidAPI
+- React and its community for excellent documentation and support
