@@ -13,15 +13,27 @@ export const StateContextProvider = ({ children }) => {
     setLoading(true);
     setError(null);
 
+    // Debug: Log API key presence (do not log the actual key in production)
+    if (!process.env.REACT_APP_API_KEY) {
+      console.error('API key is missing! Please set REACT_APP_API_KEY in your .env file.');
+      setError('API key is missing! Please set REACT_APP_API_KEY in your .env file and restart the dev server.');
+      setLoading(false);
+      setResults([]);
+      return;
+    }
+
     try {
-      console.log('Fetching from URL:', `${baseUrl}${url}`);
-      
-      const res = await fetch(`${baseUrl}${url}`, {
+      const fullUrl = `${baseUrl}${url}`;
+      const headers = {
+        'x-rapidapi-host': 'google-search3.p.rapidapi.com',
+        'x-rapidapi-key': process.env.REACT_APP_API_KEY,
+      };
+      console.log('Fetching from URL:', fullUrl);
+      console.log('Request headers:', headers);
+
+      const res = await fetch(fullUrl, {
         method: 'GET',
-        headers: {
-          'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-          'x-rapidapi-key': process.env.REACT_APP_API_KEY,
-        },
+        headers,
       });
 
       console.log('Response status:', res.status);
@@ -44,6 +56,7 @@ export const StateContextProvider = ({ children }) => {
       } else {
         console.error('Unexpected data structure:', data);
         setError('Received unexpected data structure from API');
+        setResults([]);
       }
     } catch (error) {
       console.error('Error fetching results:', error);

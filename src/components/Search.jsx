@@ -14,29 +14,34 @@ const Search = () => {
 
   useEffect(() => {
     if (debouncedValue) {
-      console.log('Setting search term:', debouncedValue);
       setSearchTerm(debouncedValue);
     }
   }, [debouncedValue, setSearchTerm]);
 
   return (
-    <div className="relative sm=ml-48 md:ml-72 sm:-mt-10 mt-3">
-      <input
-        value={text}
-        type="text"
-        className="sm:w-96 w-80 h-10 dark:bg-gray-200  border rounded-full shadow-sm outline-none p-6 text-black hover:shadow-lg"
-        placeholder="🔎 Search Google or type URL"
-        onChange={(e) => setText(e.target.value)}
-      />
-      {text !== "" && (
-        <button
-          type="button"
-          className="absolute top-1.5 right-4 text-2xl text-gray-500 "
-          onClick={() => setText("")}
-        >
-          x
-        </button>
-      )}
+    <div className="relative flex flex-col items-center w-full">
+      <label htmlFor="search-input" className="sr-only">Search</label>
+      <div className="relative w-full max-w-xl">
+        <input
+          id="search-input"
+          value={text}
+          type="text"
+          className="w-full h-12 dark:bg-gray-200 border rounded-full shadow-sm outline-none px-6 pr-12 text-black hover:shadow-lg focus:ring-2 focus:ring-blue-400 transition"
+          placeholder="🔎 Search Google or type URL"
+          onChange={(e) => setText(e.target.value)}
+          autoComplete="off"
+        />
+        {text !== "" && (
+          <button
+            type="button"
+            className="absolute top-2 right-4 text-xl text-gray-500 bg-gray-200 hover:bg-gray-300 rounded-full w-8 h-8 flex items-center justify-center transition"
+            onClick={() => setText("")}
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        )}
+      </div>
       <Links />
     </div>
   );

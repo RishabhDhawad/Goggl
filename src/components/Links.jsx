@@ -9,17 +9,22 @@ const links = [
 ];
 
 const Links = () => (
-  <div className="flex sm:justify-around justify-between items-center mt-4">
+  <nav className="flex justify-center items-center mt-4 gap-4" aria-label="Result types">
     {links.map(({ url, text }) => (
       <NavLink
+        key={url}
         to={url}
-        className="m-2 mb-0"
-        activeClassName="text-blue-700 border-b-2 dark:text-blue-300 border-blue-700 pb-2"
+        className={({ isActive }) =>
+          `px-3 py-1 rounded-full transition font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-gray-700 ${
+            isActive ? 'bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200 shadow' : ''
+          }`
+        }
+        aria-label={text}
       >
         {text}
       </NavLink>
     ))}
-  </div>
+  </nav>
 );
 
 export default Links;

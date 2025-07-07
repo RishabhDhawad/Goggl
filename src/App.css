@@ -1,0 +1,9 @@
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased;
+}
+
+#root, .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

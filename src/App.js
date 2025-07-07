@@ -1,22 +1,34 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { StateContextProvider } from "./contexts/StateContextProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Routes from "./components/RoutesComponent";
-import { useState } from "react";
+import RoutesComponent from "./components/RoutesComponent";
 
-const App = () => {
+function App() {
   const [darkTheme, setDarkTheme] = useState(false);
 
+  React.useEffect(() => {
+    if (darkTheme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkTheme]);
+
   return (
-    <div className={darkTheme ? "dark" : ""}>
-      <div className="dark:bg-gray-900 bg-gray-100 dark:text-gray-200 black min-h-screen">
-        <Navbar setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
-        <Routes />
-        <Footer />
-      </div>
-    </div>
+    <StateContextProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+          <Navbar setDarkTheme={setDarkTheme} darkTheme={darkTheme} />
+          <main className="flex-1 w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-6">
+            <RoutesComponent />
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </StateContextProvider>
   );
-};
+}
 
 export default App;

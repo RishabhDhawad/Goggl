@@ -1,76 +1,124 @@
-# Google Search Clone
+# 🚀 Goggl – Google Search Clone
 
-This project is a Google Search clone built with React, utilizing the Google Search API from RapidAPI.
 
-## Getting Started
+<p align="center">
+  <b>A modern, modular Google Search clone built with React</b><br/>
+  <em>Web, News, Image, and Video search powered by the Google Search API on RapidAPI</em>
+</p>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+<p align="center">
+  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-18.x-blue?logo=react" alt="React" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/TailwindCSS-3.x-38bdf8?logo=tailwindcss" alt="Tailwind CSS" /></a>
+  <a href="https://rapidapi.com/apigeek/api/google-search3/"><img src="https://img.shields.io/badge/API-Google_Search3-4B8DF8?logo=google" alt="Google Search API" /></a>
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+</p>
+
+---
+
+## ✨ Features
+
+- 🔎 Web search, 📰 News search, 📸 Image search, 📺 Video search
+- Modular, maintainable React component structure
+- Responsive and accessible UI with [Tailwind CSS](https://tailwindcss.com/)
+- 🌗 Dark mode toggle
+- Loading and error handling
+- [React Router v6](https://reactrouter.com/en/main) for navigation
+
+
+---
+
+## 🗂️ Project Structure
+
+```
+goggl/
+  ├── public/
+  ├── src/
+  │   ├── components/
+  │   │   ├── Footer.jsx
+  │   │   ├── ImageResults.jsx
+  │   │   ├── Links.jsx
+  │   │   ├── Loading.jsx
+  │   │   ├── Navbar.jsx
+  │   │   ├── NewsResults.jsx
+  │   │   ├── Results.jsx
+  │   │   ├── RoutesComponent.jsx
+  │   │   ├── Search.jsx
+  │   │   ├── SearchResults.jsx
+  │   │   └── VideoResults.jsx
+  │   ├── contexts/
+  │   │   └── StateContextProvider.js
+  │   ├── App.js
+  │   ├── App.css
+  │   ├── index.js
+  │   └── index.css
+  ├── .env (not committed)
+  ├── package.json
+  └── README.md
+```
+
+---
+
+## 🛠️ Getting Started
 
 ### Prerequisites
-
-- Node.js (v14.0.0 or later)
-- npm (v6.0.0 or later)
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [npm](https://www.npmjs.com/) (v6 or later)
 
 ### Installation
-
-1. Clone the repository:
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/goggl.git
+   cd goggl
    ```
-   git clone https://github.com/your-username/google-search-clone.git
-   cd google-search-clone
-   ```
-
-2. Install dependencies:
-   ```
+2. **Install dependencies:**
+   ```sh
    npm install
    ```
+3. **Set up your API key:**
+   - Create a `.env` file in the root directory:
+     ```sh
+     touch .env
+     ```
+   - Add your RapidAPI key:
+     ```env
+     REACT_APP_API_KEY=your_rapidapi_key_here
+     ```
+   - [Get your API key from RapidAPI](https://rapidapi.com/apigeek/api/google-search3/)
 
-3. Create a `.env` file in the root directory and add your RapidAPI key:
-   ```
-   REACT_APP_API_KEY=your_rapidapi_key_here
-   ```
-
-   You can obtain a RapidAPI key by signing up at [RapidAPI](https://rapidapi.com/) and subscribing to the [Google Search API](https://rapidapi.com/apigeek/api/google-search3/).
-
-### Running the Application
-
-To start the development server:
-
-```
+### Running the App
+```sh
 npm start
 ```
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-The application will be available at `http://localhost:3000`.
+---
 
-## Project Structure
+## 🧑‍💻 Usage
+- Use the search bar to search Google or type a URL.
+- Switch between All, News, Images, and Videos using the navigation links.
+- Toggle dark/light mode with the button in the navbar.
 
-- `src/components/`: Contains all React components
-- `src/contexts/`: Contains the StateContext for global state management
-- `src/index.js`: Entry point of the application
-- `src/App.js`: Main application component
+---
 
-## Features
+## 🩺 Troubleshooting
+- **API Key Issues:** Ensure your `.env` file is set up and restart the dev server after changes.
+- **CORS or Network Errors:** Check your API key and RapidAPI subscription status.
+- **Rate Limiting:** The free tier of the API may have request limits. See the RapidAPI dashboard for usage.
+- **Router Errors:** Only one `<Router>` should exist in the app. Routing is handled in `index.js` using React Router v6.
 
-- Web search
-- Image search
-- News search
-- Video search
+---
 
-## Troubleshooting
+## 🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-If you encounter issues with API rate limiting, try the following:
-- Increase the delay between requests in `src/contexts/StateContextProvider.js`
-- Check your API usage on RapidAPI dashboard
-- Consider upgrading your API plan for higher rate limits
+---
 
-## Contributing
+## 📝 License
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+## 👥 Author
 
-## Acknowledgments
-
-- Google Search API provided by RapidAPI
-- React and its community for excellent documentation and support
+Made with 💖 by [Rishabh Dhawad](https://github.com/rishabh-dhawad)

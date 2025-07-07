@@ -1,3 +1,5 @@
+// Deprecated: Use RoutesComponent.jsx for routing (React Router v6)
+
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
